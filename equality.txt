@@ -1,0 +1,19 @@
+﻿It is possible to implement the operator== notation to compare the equality of two stacks, you would need to set up templates for type names assuming you keep the parameter variables constant. More specifically, you would access the stack template which allows you to utilize the type notation ( stack<T, sequence>). In otherwords, bool operator==(const Stack& a, const Stack& b) would then be converted to bool operator==(const Stack<string>& a, const Stack<Type>& b).  Then if you wanted to compare the stacks in the code implementation, simply set up an if statement using the “==” operator to determine it’s validity. Although this is ideal, in order to utilize the type stack, you would need to add an additional include statement that has it’s function which is <bits>. Overall, it would look something like this:
+
+
+bool operator==(const stack<string> &a, const stack<string> &b)
+{
+
+
+        if ( a.size()  == b.size() )
+        {
+                Return true;
+        }
+        else
+        {
+                Return false;
+        {
+}
+
+
+Otherwise, you could also set up a template beforehand and implement it into the public part of the class. This way, you can access the template regardless of the location of the code. To use a template to compare for stacks, simply add template<class stack>. It shortens the process by allowing the user to utilize the word “stack” to establish a variable.
